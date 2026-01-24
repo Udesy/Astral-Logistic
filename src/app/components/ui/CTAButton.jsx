@@ -14,11 +14,11 @@ const CTAButton = ({ target = null, children, variant = "primary" }) => {
   const currentVariant = variants[variant];
   return (
     <button
-      className={`cursor-pointer ${currentVariant.button} py-2xs px-xs rounded-sm`}
+      className={`cursor-pointer ${currentVariant.button} py-2xs px-xs w-fit rounded-sm text-base`}
     >
       <Link
         href={target}
-        className="flex items-center justify-between gap-2 font-medium text-black"
+        className="flex text-nowrap items-center justify-between gap-2 font-medium text-black"
       >
         {children}
         <span>

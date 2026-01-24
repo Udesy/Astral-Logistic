@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <header className="fixed z-100 w-full h-fit header-padding">
-      <div className="flex w-full text-white grid-cols-12 items-center justify-between gap-x-fluid sm:items-start lg:grid">
+      <div className="flex w-full text-white text-base grid-cols-12 items-center justify-between gap-x-fluid sm:items-start lg:grid">
         <div className="col-span-4">
           <Link
             href={"/"}
