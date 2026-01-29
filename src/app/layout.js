@@ -1,5 +1,6 @@
 import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
+import LenisProvider from "./components/providers/LenisProvider";
 import "./globals.css";
 import localFont from "next/font/local";
 
@@ -43,10 +44,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${satoshi.variable} antialiased font-normal`}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+      <body className={`${satoshi.variable} antialiased font-medium`}>
+        <LenisProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </LenisProvider>
       </body>
     </html>
   );

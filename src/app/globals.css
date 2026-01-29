@@ -12,56 +12,28 @@
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1440px;
-  /* --text-heading-display: clamp(2.5rem, calc(1.125rem + 5vw), 5.63rem);
-  --text-base-small: clamp(0.821rem, 0.6071rem + 0.4647vi, 0.8943rem);
-  --text-base: clamp(1rem, 0.986rem + 0.07vw, 1.05rem);
-  --text-base-large: clamp(1rem, 0.56rem + 1vw, 1.35rem);
-  --heading-6: clamp(1rem, 0.928rem + 0.36vw, 1.25rem);
-  --heading-5: clamp(1.13rem, 1.004rem + 0.63vw, 1.57rem);
-  --heading-4: clamp(1.25rem, 1.0359rem + 1.0707vi, 1.9995rem);
-  --heading-3: clamp(1.5625rem, 1.2474rem + 1.5755vi, 2.6653rem);
-  --heading-2: clamp(1.9531rem, 1.296rem + 1.654vi, 3.5529rem);
-  --heading-1: clamp(2.4414rem, 1.7858rem + 3.278vi, 4.736rem);
-  --heading-display: clamp(2.6518rem, 1.88rem + 3.859vi, 7.3131rem);
-  --heading-footer: clamp(3.6518rem, 2.034rem + 9.959vi, 18.3131rem);
-  --heading-number: clamp(1.6518rem, 2.034rem + 7.959vi, 8.3131rem);
-  --spacing-3xs: clamp(0.3125rem, 0.3125rem + 0vi, 0.3125rem);
-  --spacing-2xs: clamp(0.5625rem, 0.5446rem + 0.0893vi, 0.625rem);
-  --spacing-xs: clamp(0.875rem, 0.8571rem + 0.0893vi, 0.9375rem);
-  --spacing-sm: clamp(1.125rem, 1.0893rem + 0.1786vi, 1.25rem);
-  --spacing-md: clamp(1.6875rem, 1.6339rem + 0.2679vi, 1.875rem);
-  --spacing-lg: clamp(2.25rem, 2.1786rem + 0.3571vi, 2.5rem);
-  --spacing-xl: clamp(3.375rem, 3.2679rem + 0.5357vi, 3.75rem);
-  --spacing-2xl: clamp(4.5rem, 4.3571rem + 0.7143vi, 5rem);
-  --spacing-3xl: clamp(5.75rem, 6.2571rem + 1.2023vi, 7.25rem);
-  --gap-fluid: clamp(1rem, 0.8571rem + 1.0143vi, 3.5rem);
-  --column-count: 12;
-  --grid-main: repeat(var(--column-count), minmax(0, 1fr));
-  --grid-gap-total: calc(var(--gap-fluid) * (var(--column-count) - 1));
-  --column-width: calc(
-    (100% - var(--grid-gap-total)) / var(--column-count) + var(--gap-fluid)
-  ); */
   --text-heading-display: clamp(2.63rem, calc(1.36rem + 4.6vw), 5.5rem);
-  --heading-footer: clamp(3.6518rem, -3.698rem + 16.704vw, 18.3131rem);
-  --heading-number: clamp(1.6518rem, -1.098rem + 6.25vw, 8.3131rem);
-  --heading-1: clamp(2.4414rem, 0.941rem + 3.41vw, 4.736rem);
-  --heading-2: clamp(1.9531rem, 0.653rem + 2.955vw, 3.5529rem);
-  --heading-3: clamp(1.5625rem, 0.712rem + 1.932vw, 2.6653rem);
-  --heading-4: clamp(1.25rem, 0.5rem + 1.705vw, 1.9995rem);
-  --heading-5: clamp(1.13rem, 0.644rem + 1.105vw, 1.57rem);
-  --heading-6: clamp(1rem, 0.642rem + 0.814vw, 1.25rem);
+  --text-heading-footer: clamp(3.6518rem, -3.698rem + 16.704vw, 18.3131rem);
+  --text-heading-number: clamp(3rem, calc(2.12rem + 3.2vw), 5rem);
+  --text-heading-1: clamp(2.5rem, calc(1.51rem + 3.6vw), 4.75rem);
+  --text-heading-2: clamp(1.9531rem, 0.653rem + 2.955vw, 3.5529rem);
+  --text-heading-3: clamp(1.5625rem, 0.712rem + 1.932vw, 2.6653rem);
+  --text-heading-4: clamp(1.25rem, calc(0.92rem + 1.2vw), 2rem);
+  --text-heading-5: clamp(1rem, calc(0.89rem + 0.4vw), 1.25rem);
+  --text-heading-6: clamp(1rem, 0.642rem + 0.814vw, 1.25rem);
   --text-base: clamp(0.88rem, calc(0.82rem + 0.2vw), 1rem);
   --text-base-large: clamp(1rem, calc(0.89rem + 0.4vw), 1.25rem);
   --text-base-small: clamp(0.821rem, 0.655rem + 0.377vw, 0.8943rem);
-  --spacing-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
-  --spacing-2xs: clamp(0.5625rem, 0.545rem + 0.04vw, 0.625rem);
-  --spacing-xs: clamp(0.875rem, 0.857rem + 0.041vw, 0.9375rem);
-  --spacing-sm: clamp(1.125rem, 1.089rem + 0.082vw, 1.25rem);
+  --spacing-3xs: clamp(0.375rem, calc(0.32rem + 0.2vw), 0.5rem);
+  --spacing-2xs: clamp(0.5rem, calc(0.445rem + 0.2vw), 0.625rem);
+  --spacing-xs: clamp(0.75rem, calc(0.667rem + 0.3vw), 0.938rem);
+  --spacing-sm: clamp(1.125rem, calc(1.07rem + 0.2vw), 1.25rem);
   --spacing-md: clamp(0.5rem, calc(0.06rem + 1.6vw), 1.5rem);
-  --spacing-lg: clamp(2.25rem, 2.179rem + 0.161vw, 2.5rem);
-  --spacing-xl: clamp(3.375rem, 3.268rem + 0.243vw, 3.75rem);
-  --spacing-2xl: clamp(4.5rem, 4.357rem + 0.325vw, 5rem);
-  --spacing-3xl: clamp(10.75rem, calc(13.99rem - 3.6vw), 13rem);
+  --spacing-lg: clamp(2rem, calc(1.78rem + 0.8vw), 2.5rem);
+  --spacing-xl: clamp(3.375rem, calc(3.155rem + 0.8vw), 3.875rem);
+  --spacing-2xl: clamp(4.5rem, calc(4.28rem + 0.8vw), 5rem);
+  --spacing-3xl: clamp(4.75rem, calc(4.53rem + 0.8vw), 5.25rem);
+  --spacing-heading: clamp(10.75rem, calc(13.99rem - 3.6vw), 13rem);
   --gap-fluid: clamp(1rem, 0.286rem + 1.623vw, 3.5rem);
   --column-count: 12;
   --grid-main: repeat(var(--column-count), minmax(0, 1fr));
@@ -78,13 +50,39 @@
     box-sizing: border-box;
   }
 
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+
   body {
     background: var(--color-pale-blue);
     color: var(--color-black);
+    overflow-x: hidden;
   }
 
   p {
-    max-width: 65ch;
+    max-width: 45ch;
     line-height: 110%;
   }
 
@@ -102,7 +100,7 @@
   h3,
   h4,
   h5 {
-    line-height: 100%;
+    line-height: 105%;
     letter-spacing: -0.02em;
   }
 
@@ -160,6 +158,16 @@
     padding-bottom: clamp(1rem, calc(0.34rem + 2.4vw), 2.5rem);
     padding-left: clamp(1rem, calc(0.34rem + 2.4vw), 2.5rem);
     padding-right: clamp(1rem, calc(0.34rem + 2.4vw), 2.5rem);
+  }
+
+  .section-padding-x {
+    padding-left: clamp(1rem, calc(0.34rem + 2.4vw), 2.5rem);
+    padding-right: clamp(1rem, calc(0.34rem + 2.4vw), 2.5rem);
+  }
+
+  .section-padding-y {
+    padding-top: clamp(4rem, calc(3.56rem + 1.6vw), 5rem);
+    padding-bottom: clamp(4rem, calc(3.56rem + 1.6vw), 5rem);
   }
 
   .button-padding-x {

@@ -16,13 +16,13 @@ const Hero = () => {
         />
       </div>
       <div className="w-full h-full flex flex-col justify-between">
-        <div className="w-full flex items-center justify-center mt-3xl">
+        <div className="w-full flex items-center justify-center mt-heading">
           <h1 className="text-heading-display font-medium text-white text-center max-w-[15ch]">
             Fast and Sustainable Logistic Solution
           </h1>
         </div>
         <div className="flex lg:grid grid-cols-12 gap-x-fluid items-end">
-          <div className="col-span-4 flex flex-col gap-sm">
+          <div className="col-span-5 flex flex-col gap-sm">
             <p className="text-white text-base-large max-w-[40ch] h-fit">
               Logistics shouldn’t be complicated. We plan each shipment, track
               it closely, and make sure it reaches its destination on time.
@@ -36,7 +36,7 @@ const Hero = () => {
               </CTAButton>
             </div>
           </div>
-          <div className="col-start-9 col-end-13 h-full w-full hidden lg:block bg-green-700">
+          <div className="col-start-9 col-end-13 h-full w-full hidden lg:block">
             <HeroPreviewCard />
           </div>
         </div>
