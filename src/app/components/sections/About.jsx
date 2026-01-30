@@ -25,7 +25,7 @@ const About = () => {
           {about_constant.map(({ id, sign, heading, sub_heading }) => (
             <div
               key={id}
-              className="border-b-1 border-b-navy-blue/40 flex flex-col gap-2xs py-lg"
+              className="border-b border-b-navy-blue/40 flex flex-col gap-2xs py-lg"
             >
               <div className="flex flex-row h-10 items-center">
                 <h3 className="flex items-center text-heading-4 gap-2xs">
@@ -33,9 +33,7 @@ const About = () => {
                   {heading}
                 </h3>
               </div>
-              <p className="text-base leading-[110%] md:max-w-[30ch]">
-                {sub_heading}
-              </p>
+              <p className="max-md:max-w-[30ch]">{sub_heading}</p>
             </div>
           ))}
         </div>
