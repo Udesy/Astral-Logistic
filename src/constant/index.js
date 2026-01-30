@@ -65,3 +65,26 @@ export const about_constant = [
       "Every member of Astral brings discipline, attention, and a genuine commitment to doing things the right way.",
   },
 ];
+
+export const company_service = [
+  {
+    id: 1,
+    src: "/resources/images/service/service1.jpg",
+    text: "Fast & Secure Express Courier Delivery",
+  },
+  {
+    id: 2,
+    src: "/resources/images/service/service2.jpg",
+    text: "Global Air Freight & Priority Cargo Transport",
+  },
+  {
+    id: 3,
+    src: "/resources/images/service/service3.jpeg",
+    text: "Cost-Efficient Sea Freight for Large Shipments",
+  },
+  {
+    id: 4,
+    src: "/resources/images/service/service4.png",
+    text: "Trusted Road Logistics for Any Distance",
+  },
+];

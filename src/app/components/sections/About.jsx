@@ -20,12 +20,12 @@ const About = () => {
           </CTAButton>
         </div>
       </div>
-      <div className="w-full h-full md:grid md:grid-cols-2 md:gap-md flex flex-col ">
+      <div className="w-full h-full md:grid md:grid-cols-2 md:gap-md flex flex-col">
         <div className="order-2 md:order-1">
           {about_constant.map(({ id, sign, heading, sub_heading }) => (
             <div
               key={id}
-              className="border-b-2 border-b-navy-blue/40 flex flex-col gap-2xs py-lg"
+              className="border-b-1 border-b-navy-blue/40 flex flex-col gap-2xs py-lg"
             >
               <div className="flex flex-row h-10 items-center">
                 <h3 className="flex items-center text-heading-4 gap-2xs">
@@ -33,11 +33,13 @@ const About = () => {
                   {heading}
                 </h3>
               </div>
-              <p className="max-w-[30ch]">{sub_heading}</p>
+              <p className="text-base leading-[110%] md:max-w-[30ch]">
+                {sub_heading}
+              </p>
             </div>
           ))}
         </div>
-        <div className="relative w-full rounded-lg overflow-clip min-h-145 order-1 md:order-2">
+        <div className="relative w-full rounded-lg overflow-clip min-h-130 order-1 md:order-2">
           <Image
             src={"/resources/images/aboutsection.jpg"}
             alt="ship dock image"
