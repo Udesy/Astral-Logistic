@@ -12,7 +12,7 @@ const Numbers = () => {
           {company_number.map(({ id, number, label, sign }) => (
             <div
               key={id}
-              className="w-full items-center justify-center md:border-l border-l-navy-blue first:border-l-0"
+              className="w-full items-center justify-center md:border-l border-l-stroke-navy-blue first:border-l-0"
             >
               <div className="w-full flex items-center justify-center text-navy-blue text-heading-number">
                 <span>{number}</span>

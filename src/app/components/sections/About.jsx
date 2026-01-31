@@ -33,11 +33,13 @@ const About = () => {
                   {heading}
                 </h3>
               </div>
-              <p className="max-md:max-w-[30ch]">{sub_heading}</p>
+              <p className="max-md:max-w-[30ch] text-[clamp(0.94rem,calc(0.910rem+0.100vw),1.00rem)]">
+                {sub_heading}
+              </p>
             </div>
           ))}
         </div>
-        <div className="relative w-full rounded-lg overflow-clip min-h-130 order-1 md:order-2">
+        <div className="relative w-full rounded-lg overflow-clip min-h-120 order-1 md:order-2">
           <Image
             src={"/resources/images/aboutsection.jpg"}
             alt="ship dock image"

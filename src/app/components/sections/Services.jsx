@@ -32,22 +32,12 @@ const Services = () => {
             [ Our Services ]
           </span>
         </div>
-        <div className="w-full min-h-screen lg:flex lg:flex-row md:grid md:grid-cols-2 flex flex-col lg:gap-3 gap-sm">
+        <div className="w-full lg:flex lg:flex-row md:grid md:grid-cols-2 flex flex-col lg:gap-3 gap-sm">
           {company_service.map(({ id, src, text }, index) => {
             const isHovered = hoveredIndex === index;
             const isOtherHovered =
               hoveredIndex !== null && hoveredIndex !== index;
             return (
-              // <Link
-              //   href={"/service"}
-              //   key={index}
-              //   className="relative w-full h-134 rounded-md overflow-clip cursor-pointer duration-700 transition-all"
-              //   onMouseEnter={() => handleMouseEnter(index)}
-              //   onMouseLeave={() => handleMouseLeave(index)}
-              //   style={{
-              //     flex: isHovered ? 3 : isOtherHovered ? 0.5 : 1,
-              //   }}
-              // >
               <Link
                 href={"/service"}
                 key={index}

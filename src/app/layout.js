@@ -12,9 +12,19 @@ const satoshi = localFont({
       style: "normal",
     },
     {
+      path: "../../public/fonts/Satoshi-LightItalic.woff2",
+      weight: "300",
+      style: "italic",
+    },
+    {
       path: "../../public/fonts/Satoshi-Regular.woff2",
       weight: "400",
       style: "normal",
+    },
+    {
+      path: "../../public/fonts/Satoshi-Italic.woff2",
+      weight: "400",
+      style: "italic",
     },
     {
       path: "../../public/fonts/Satoshi-Medium.woff2",
