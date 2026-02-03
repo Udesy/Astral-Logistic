@@ -165,7 +165,7 @@ export const testimonials = [
     id: 1,
     src: "/resources/images/testimonials/client2.jpg",
     client_review:
-      "“Astral has been a dependable partner for our shipments. Their communication is clear, and every delivery arrives just the way we expect on time and without hassle.”",
+      "“Astral consistently delivers on time, with clear communication and a process we can trust.”",
     client_name: "Aarav Mehta",
     client_position: "Operations Manager, Krios Industries",
   },

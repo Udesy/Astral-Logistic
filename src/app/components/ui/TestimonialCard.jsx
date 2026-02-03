@@ -9,13 +9,13 @@ const TestimonialCard = ({
 }) => {
   return (
     <div className="flex flex-row items-center sm:min-w-[500px] border border-stroke-navy-blue bg-white max-sm:p-sm p-md rounded-lg gap-lg w-full h-fit">
-      <div className="flex flex-col justify-between sm:gap-xl gap-md">
+      <div className="flex flex-col justify-between sm:gap-xl gap-lg">
         <p className="italic text-base leading-[110%] max-w-[35ch]">
           {client_review}
         </p>
         <div>
           <h5 className="text-navy-blue">{client_name}</h5>
-          <h6 className="text-gray text-base-small leading-[110%]">
+          <h6 className="text-gray text-base-small leading-[110%] max-w-[18ch]">
             {client_position}
           </h6>
         </div>
