@@ -185,4 +185,20 @@ export const testimonials = [
     client_name: "Issabela Camil",
     client_position: "Founder, PureSip Beverages",
   },
+  {
+    id: 4,
+    src: "/resources/images/testimonials/client5.png",
+    client_review:
+      "“Astral has made shipping feel effortless for us. They truly understand how important timing and care are, and they’ve been reliable every single time.”",
+    client_name: "Mei Lin Chen",
+    client_position: "Founder & CEO, Lunaria Beauty Co.",
+  },
+  {
+    id: 5,
+    src: "/resources/images/testimonials/client6.png",
+    client_review:
+      "“Working with Astral has taken the stress out of logistics. Their consistency, clarity, and reliability make them easy to trust.”",
+    client_name: "Daniel Harper",
+    client_position: "Co-Founder & Managing Director, ClearView Optics",
+  },
 ];

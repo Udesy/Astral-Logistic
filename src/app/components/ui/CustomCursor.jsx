@@ -53,13 +53,13 @@ const CustomCursor = ({ children, isInside, className = "", ease = 0.15 }) => {
     <div
       ref={cursorRef}
       className={clsx(
-        "pointer-events-none fixed top-0 left-0 z-9999 bg-golden-yellow text-xs p-3xs will-change-transform rounded-md flex flex-row items-center gap-1 max-md:hidden",
+        "pointer-events-none fixed top-0 left-0 z-9999 bg-golden-yellow text-sm p-3xs will-change-transform rounded-md flex flex-row items-center gap-1 max-md:hidden",
         isInside ? "opacity-100" : "opacity-0",
         className,
       )}
     >
       {children}
-      <span className="size-3">
+      <span className="size-4">
         <DiagonalArrow />
       </span>
     </div>

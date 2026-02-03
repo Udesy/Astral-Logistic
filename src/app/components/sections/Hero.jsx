@@ -5,7 +5,7 @@ import HeroPreviewCard from "../ui/HeroPreviewCard";
 
 const Hero = () => {
   return (
-    <section className="relative h-svh section-padding">
+    <section className="relative h-svh section-padding select-none">
       <div className="absolute top-0 left-0 w-full h-full -z-10 bg-[linear-gradient(180deg,rgba(255,_255,_255,_0.0)_0%,rgba(0,_0,_0,_0.5)_50%)]"></div>
       <div className="absolute top-0 left-0 w-full h-full -z-20 bg-black object-cover">
         <Image

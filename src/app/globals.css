@@ -5,6 +5,7 @@
   --color-black: #000000;
   --color-white: #ffffff;
   --color-golden-yellow: #ffcf26;
+  --color-golden-yellow-80: rgba(255, 207, 38, 0.6);
   --color-pale-blue: #f3f8ff;
   --color-navy-blue: #012b5d;
   --color-gray: #626262;
@@ -141,6 +142,16 @@
       max-width: 1440px;
     }
   }
+
+  ::selection {
+    background-color: var(--color-golden-yellow-80);
+    color: var(--color-black);
+  }
+
+  ::-moz-selection {
+    background-color: var(--color-golden-yellow-80);
+    color: var(--color-black);
+  }
 }
 
 @layer utilities {
@@ -197,5 +208,18 @@
 
   .animate-marquee:hover {
     animation-play-state: paused;
+  }
+
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  .scroll-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }
