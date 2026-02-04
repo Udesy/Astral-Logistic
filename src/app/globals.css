@@ -107,6 +107,10 @@
     letter-spacing: -0.02em;
   }
 
+  span {
+    @apply select-none;
+  }
+
   .container {
     width: 100%;
     margin-inline: auto;
@@ -221,5 +225,9 @@
 
   .scollbar-hide::-webkit-scrollbar {
     display: none;
+  }
+
+  .footer_contact_heading {
+    @apply text-navy-blue uppercase font-medium text-base-small;
   }
 }

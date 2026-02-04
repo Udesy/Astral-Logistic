@@ -25,6 +25,7 @@ const TestimonialCard = ({
           src={src}
           alt="Client Profile Images"
           fill
+          sizes="1"
           className="object-cover"
         />
       </div>

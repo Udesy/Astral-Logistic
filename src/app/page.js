@@ -6,6 +6,7 @@ import Services from "./components/sections/Services";
 import Partners from "./components/sections/Partners";
 import WhyChooseUs from "./components/sections/WhyChooseUs";
 import Testimonials from "./components/sections/Testimonials";
+import Contact from "./components/sections/Contact";
 
 const page = () => {
   return (
@@ -17,6 +18,7 @@ const page = () => {
       <Partners />
       <WhyChooseUs />
       <Testimonials />
+      <Contact />
     </>
   );
 };

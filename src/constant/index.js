@@ -202,3 +202,66 @@ export const testimonials = [
     client_position: "Co-Founder & Managing Director, ClearView Optics",
   },
 ];
+
+export const footer_nav = [
+  {
+    id: 0,
+    text: "Home",
+    target: "/",
+  },
+  {
+    id: 1,
+    text: "Services",
+    target: "/service",
+  },
+  {
+    id: 2,
+    text: "About Us",
+    target: "/about",
+  },
+  {
+    id: 3,
+    text: "Contact",
+    target: "/contact",
+  },
+];
+
+export const social_links = [
+  { id: 0, name: "facebook" },
+  { id: 1, name: "linkedin" },
+  { id: 2, name: "instagram" },
+  { id: 3, name: "x" },
+];
+
+export const contactData = {
+  opening_hours: {
+    label: "Opening Hours",
+    days: "Monday – Friday",
+    time: "9:00 AM – 5:00 PM",
+  },
+  email: {
+    label: "Email",
+    addresses: ["support@astrallogistics.in", "info@astrallogistics.in"],
+  },
+  contact: {
+    label: "Contact",
+    phone_numbers: [
+      {
+        number: "+91 22 4893 7621",
+      },
+      {
+        number: "+91 93218 44720",
+        note: "Customer Support",
+      },
+    ],
+  },
+  address: {
+    label: "Address",
+    lines: [
+      "Plot No. 42, Sector 8A",
+      "Mahalaxmi Industrial Estate",
+      "Andheri East, Mumbai – 400093",
+      "Maharashtra, India",
+    ],
+  },
+};
