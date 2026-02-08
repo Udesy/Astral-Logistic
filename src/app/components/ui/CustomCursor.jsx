@@ -30,7 +30,7 @@ const CustomCursor = ({ children, isInside, className = "", ease = 0.15 }) => {
         (targetPosition.current.y - currentPosition.current.y) * ease;
 
       if (cursorRef.current) {
-        cursorRef.current.style.transform = `translate(${currentPosition.current.x}px, ${currentPosition.current.y}px) translate(-50%, -50%)`;
+        cursorRef.current.style.transform = `translate3d(${currentPosition.current.x}px, ${currentPosition.current.y}px, 0) translate(10%, 40%)`;
       }
 
       animationFrameId.current = requestAnimationFrame(animate);
@@ -54,7 +54,7 @@ const CustomCursor = ({ children, isInside, className = "", ease = 0.15 }) => {
       ref={cursorRef}
       className={clsx(
         "pointer-events-none fixed top-0 left-0 z-9999 bg-golden-yellow text-sm p-3xs will-change-transform rounded-md flex flex-row items-center gap-1 max-md:hidden",
-        isInside ? "opacity-100" : "opacity-0",
+        isInside ? "opacity-100 scale-100" : "opacity-0 scale-50",
         className,
       )}
     >

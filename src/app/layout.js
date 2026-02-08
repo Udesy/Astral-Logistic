@@ -1,3 +1,4 @@
+import ClientLayout from "./components/layout/ClientLayout";
 import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
 import LenisProvider from "./components/providers/LenisProvider";
@@ -56,8 +57,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${satoshi.variable} antialiased font-medium`}>
         <LenisProvider>
-          <Header />
-          <main>{children}</main>
+          <ClientLayout>{children}</ClientLayout>
           <Footer />
         </LenisProvider>
       </body>

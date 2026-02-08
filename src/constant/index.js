@@ -216,7 +216,7 @@ export const footer_nav = [
   },
   {
     id: 2,
-    text: "About Us",
+    text: "About us",
     target: "/about",
   },
   {

@@ -8,9 +8,9 @@ import CTAButton from "../ui/CTAButton";
 import Logo from "../assets/Logo";
 import { nav_links } from "@/constant";
 
-const Header = () => {
+const Header = ({ showMenu, setShowMenu }) => {
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
   const [isScrolledPastHero, setIsScrolledPastHero] = useState(false);
 
   const linkClass = (path) =>
@@ -32,7 +32,8 @@ const Header = () => {
   }, []);
 
   const handleClick = () => {
-    setIsOpen(!isOpen);
+    // setIsOpen(!isOpen);
+    setShowMenu(!showMenu);
   };
 
   return (
@@ -74,14 +75,13 @@ const Header = () => {
           <CTAButton
             className={"block md:hidden"}
             onClick={handleClick}
-            isOpen={isOpen}
+            isOpen={showMenu}
           >
-            {/* {isOpen ? "Close" : "Menu"} */}
             <span className="relative inline-block overflow-hidden ">
               <span
                 className={clsx(
                   "inline-block transition-all duration-300 ease-in-out",
-                  isOpen ? "-translate-y-5" : "translate-y-0",
+                  showMenu ? "-translate-y-5" : "translate-y-0",
                 )}
               >
                 Menu
@@ -89,7 +89,7 @@ const Header = () => {
               <span
                 className={clsx(
                   "absolute inset-0 inline-block transition-all duration-300 ease-in-out",
-                  isOpen ? "translate-y-0" : "translate-y-5",
+                  showMenu ? "translate-y-0" : "translate-y-5",
                 )}
               >
                 Close
