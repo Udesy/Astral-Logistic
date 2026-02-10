@@ -83,7 +83,7 @@ const MenuOverlay = ({ showMenu, setShowMenu }) => {
     <div
       ref={menuRef}
       className={clsx(
-        "fixed inset-0 md:hidden section-padding flex flex-col justify-end bg-navy-blue z-90 gap-y-3xl",
+        "fixed inset-0 md:hidden section-padding flex flex-col justify-end bg-navy-blue z-90 gap-y-3xl max-xs",
       )}
       style={{ opacity: 0, visibility: "hidden" }}
     >
@@ -93,7 +93,7 @@ const MenuOverlay = ({ showMenu, setShowMenu }) => {
             Supporting brands beyond operational limits.
           </p>
         </div>
-        <nav className="mb-xl">
+        <nav className="">
           {footer_nav.map(({ id, text, target }, index) => (
             <div key={id}>
               {index === 0 && (
