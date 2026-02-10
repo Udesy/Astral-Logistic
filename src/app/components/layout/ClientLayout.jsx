@@ -9,7 +9,7 @@ export default function ClientLayout({ children }) {
 
   return (
     <>
-      <Header setShowMenu={setShowMenu} showMenu={showMenu} />
+      <Header showMenu={showMenu} setShowMenu={setShowMenu} />
       <MenuOverlay showMenu={showMenu} setShowMenu={setShowMenu} />
       <main>{children}</main>
     </>
