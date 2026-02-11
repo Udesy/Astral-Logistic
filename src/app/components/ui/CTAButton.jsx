@@ -27,8 +27,14 @@ const CTAButton = ({
         <div className="flex text-nowrap items-center justify-between gap-2 font-medium text-black">
           {children}
           <span className="overflow-clip inline-flex w-fit relative ">
-            <Arrow className="absolute -translate-x-6 group-hover:translate-x-0 duration-300 ease-in-out transition-all" />
-            <Arrow className="group-hover:translate-x-6 duration-300 ease-in-out transition-all" />
+            <Arrow
+              className="absolute -translate-x-6 group-hover:translate-x-0 duration-400 ease-in-out transition-all"
+              aria-hidden="true"
+            />
+            <Arrow
+              className="group-hover:translate-x-6 duration-400 ease-in-out transition-all"
+              aria-hidden="true"
+            />
           </span>
         </div>
       </Link>
@@ -38,6 +44,7 @@ const CTAButton = ({
     <button
       className={`${baseStyle} ${variants[variant]} ${className}`}
       onClick={onClick}
+      aria-label="Open Menu"
     >
       <div className="flex text-nowrap items-center justify-between gap-3xs font-medium text-black">
         {children}

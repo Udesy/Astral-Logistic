@@ -149,12 +149,12 @@
 
   ::selection {
     background-color: var(--color-golden-yellow-80);
-    color: var(--color-black);
+    color: var(--color-navy-blue);
   }
 
   ::-moz-selection {
     background-color: var(--color-golden-yellow-80);
-    color: var(--color-black);
+    color: var(--color-navy-blue);
   }
 }
 

@@ -2,6 +2,8 @@ import React from "react";
 import CTAButton from "../ui/CTAButton";
 import Image from "next/image";
 import { why_choose_us } from "@/constant";
+import TextAnimation from "../ui/TextAnimation";
+import ImageReveal from "../ui/ImageAnimation";
 
 const WhyChooseUs = () => {
   return (
@@ -11,10 +13,10 @@ const WhyChooseUs = () => {
           <span className="text-navy-blue text-base-large col-span-3">
             [ Why Choose Us ]
           </span>
-          <h2 className="text-heading-1 col-span-9">
+          <TextAnimation as="h2" className="text-heading-1 col-span-9">
             We help businesses move goods across borders by planning each
             shipment so it arrives when expected, safely.
-          </h2>
+          </TextAnimation>
         </div>
         <div className="w-full flex items-center md:justify-end justify-start">
           <CTAButton target="/about" variant="primary" className="block">
@@ -40,12 +42,14 @@ const WhyChooseUs = () => {
           ))}
         </div>
         <div className="relative w-full rounded-lg overflow-clip min-h-120 order-1 md:order-2">
-          <Image
-            src={"/resources/images/whychooseussection.png"}
-            alt="ship dock image"
-            fill
-            className="object-cover"
-          />
+          <ImageReveal>
+            <Image
+              src={"/resources/images/whychooseussection.png"}
+              alt="ship dock image"
+              fill
+              className="object-cover"
+            />
+          </ImageReveal>
         </div>
       </div>
     </section>

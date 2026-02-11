@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import CTAButton from "../ui/CTAButton";
+import TextAnimation from "../ui/TextAnimation";
 
 const Contact = () => {
   return (
@@ -19,9 +20,15 @@ const Contact = () => {
           bg-[linear-gradient(180deg,rgba(255,_255,_255,_0.1)_25%,_rgba(0,_0,_0,_0.75)_100%)]"
         />
         <div className="relative flex flex-col z-20 md:gap-2xl gap-xl">
-          <h2 className="text-white text-heading-1 max-w-[20ch]">
+          {/* <h2 className="text-white text-heading-1 max-w-[20ch]">
             Have questions about your shipment? Get a clear quote from our team.
-          </h2>
+          </h2> */}
+          <TextAnimation
+            as="h2"
+            className="text-white text-heading-1 max-w-[20ch]"
+          >
+            Have questions about your shipment? Get a clear quote from our team.
+          </TextAnimation>
           <CTAButton target={"/contact"} className="block">
             Get a Quotation
           </CTAButton>

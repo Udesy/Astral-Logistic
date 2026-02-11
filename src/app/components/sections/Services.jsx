@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import CustomCursor from "../ui/CustomCursor";
 import clsx from "clsx";
 import Link from "next/link";
+import TextAnimation from "../ui/TextAnimation";
 
 const Services = () => {
   const [cursorActive, setCursorActive] = useState(false);
@@ -24,10 +25,17 @@ const Services = () => {
     <section className="section-padding-x section-padding-y">
       <div className="w-full h-full flex flex-col gap-3xl">
         <div className="lg:grid flex flex-col grid-cols-12 gap-fluid">
-          <h2 className="text-heading-1 col-span-10 order-2 lg:order-1">
+          {/* <h2 className="text-heading-1 col-span-10 order-2 lg:order-1">
             Our network covers air, sea, road, and express services to keep
             shipments moving without delays.
-          </h2>
+          </h2> */}
+          <TextAnimation
+            as="h2"
+            className="text-heading-1 col-span-10 order-2 lg:order-1"
+          >
+            Our network covers air, sea, road, and express services to keep
+            shipments moving without delays.
+          </TextAnimation>
           <span className="text-navy-blue text-base-large col-span-2 h-full flex flex-col lg:items-end items-start justify-end order-1 lg:order-2">
             [ Our Services ]
           </span>

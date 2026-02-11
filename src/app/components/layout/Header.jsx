@@ -10,7 +10,7 @@ import { nav_links } from "@/constant";
 
 const Header = ({ showMenu, setShowMenu }) => {
   const pathname = usePathname();
-  // const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [isScrolledPastHero, setIsScrolledPastHero] = useState(false);
 
   const linkClass = (path) =>
@@ -32,7 +32,7 @@ const Header = ({ showMenu, setShowMenu }) => {
   }, []);
 
   const handleClick = () => {
-    // setIsOpen(!isOpen);
+    setIsOpen(!isOpen);
     setShowMenu(!showMenu);
   };
 
@@ -40,8 +40,8 @@ const Header = ({ showMenu, setShowMenu }) => {
     <header className="fixed z-100 w-full h-fit header-padding">
       <div
         className={clsx(
-          " transition-all duration-300 flex w-full text-base grid-cols-12 items-center justify-between gap-x-fluid sm:items-start lg:grid",
-          isScrolledPastHero ? "text-navy-blue" : "text-white",
+          " transition-all duration-500 flex w-full text-base grid-cols-12 items-center justify-between gap-x-fluid sm:items-start lg:grid",
+          isScrolledPastHero && !isOpen ? "text-navy-blue" : "text-white",
         )}
       >
         <div className="col-span-4">
