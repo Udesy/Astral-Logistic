@@ -41,16 +41,14 @@ const WhyChooseUs = () => {
             </div>
           ))}
         </div>
-        <div className="relative w-full rounded-lg overflow-clip min-h-120 order-1 md:order-2">
-          <ImageReveal>
-            <Image
-              src={"/resources/images/whychooseussection.png"}
-              alt="ship dock image"
-              fill
-              className="object-cover"
-            />
-          </ImageReveal>
-        </div>
+        <ImageReveal className="relative w-full rounded-lg overflow-clip min-h-120 order-1 md:order-2">
+          <Image
+            src={"/resources/images/whychooseussection.png"}
+            alt="ship dock image"
+            fill
+            className="object-cover"
+          />
+        </ImageReveal>
       </div>
     </section>
   );
