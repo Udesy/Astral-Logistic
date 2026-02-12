@@ -9,8 +9,14 @@ const Hero = () => {
   return (
     <section className="relative h-svh section-padding select-none">
       <div className="absolute top-0 left-0 w-full h-full -z-10 bg-[linear-gradient(180deg,rgba(255,_255,_255,_0.0)_0%,rgba(0,_0,_0,_0.5)_50%)]"></div>
-      <div className="absolute top-0 left-0 w-full h-full -z-20 bg-black object-cover">
-        <ImageReveal scrollTrigger="false" ease="power2.out">
+      <div className="absolute inset-0 -z-50 w-full h-full bg-black">
+        <ImageReveal
+          scrollTrigger={false}
+          ease="power2.out"
+          scale={true}
+          delay={0.4}
+          className="absolute top-0 left-0 w-full h-full -z-20 bg-black"
+        >
           <Image
             src={"/resources/images/hero.jpg"}
             alt="Automated cargo containers moving through a modern shipping terminal."

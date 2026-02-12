@@ -12,11 +12,14 @@ const Header = ({ showMenu, setShowMenu }) => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolledPastHero, setIsScrolledPastHero] = useState(false);
+  const isHomePage = pathname === "/";
 
   const linkClass = (path) =>
     clsx(pathname === path ? "cursor-none opacity-75" : "cursor-pointer");
 
   useEffect(() => {
+    if (!isHomePage) return;
+
     const handleScroll = () => {
       const heroHeight = window.innerHeight;
       const scrollPosition = window.scrollY;
@@ -24,16 +27,23 @@ const Header = ({ showMenu, setShowMenu }) => {
       setIsScrolledPastHero(scrollPosition > heroHeight - 60);
     };
 
-    window.addEventListener("scroll", handleScroll);
-
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHomePage]);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
     setShowMenu(!showMenu);
+  };
+
+  const getHeaderTextColor = () => {
+    if (showMenu) return "text-white";
+    if (pathname === "/") {
+      return isScrolledPastHero ? "text-navy-blue" : "text-white";
+    }
+    return "text-navy-blue";
   };
 
   return (
@@ -41,7 +51,8 @@ const Header = ({ showMenu, setShowMenu }) => {
       <div
         className={clsx(
           " transition-all duration-500 flex w-full text-base grid-cols-12 items-center justify-between gap-x-fluid sm:items-start lg:grid",
-          isScrolledPastHero && !isOpen ? "text-navy-blue" : "text-white",
+          // isScrolledPastHero && !isOpen ?"text-navy-blue" : "text-white",
+          getHeaderTextColor(),
         )}
       >
         <div className="col-span-4">
@@ -80,7 +91,7 @@ const Header = ({ showMenu, setShowMenu }) => {
             <span className="relative inline-block overflow-hidden ">
               <span
                 className={clsx(
-                  "inline-block transition-all duration-300 ease-in-out",
+                  "inline-block transition-all duration-500 ease-in-out",
                   showMenu ? "-translate-y-5" : "translate-y-0",
                 )}
               >
@@ -88,7 +99,7 @@ const Header = ({ showMenu, setShowMenu }) => {
               </span>
               <span
                 className={clsx(
-                  "absolute inset-0 inline-block transition-all duration-300 ease-in-out",
+                  "absolute inset-0 inline-block transition-all duration-500 ease-in-out",
                   showMenu ? "translate-y-0" : "translate-y-5",
                 )}
               >

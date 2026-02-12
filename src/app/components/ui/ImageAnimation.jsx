@@ -18,6 +18,9 @@ const ImageReveal = ({
   scrollTrigger = true,
   triggerStart = "top 70%",
   wrapperTag: WrapperTag = "div",
+  scale = false,
+  parallax = false,
+  parallaxSpeed = 100,
   ...props
 }) => {
   const wrapperRef = useRef(null);
@@ -29,13 +32,14 @@ const ImageReveal = ({
     const ctx = gsap.context(() => {
       gsap.set(wrapperRef.current, { autoAlpha: 1 });
 
-      gsap.set(imageRef.current, { opacity: 0 });
+      gsap.set(imageRef.current, { opacity: 0, scale: scale ? 1.1 : 1 });
 
       gsap.to(imageRef.current, {
         opacity: 1,
         duration: duration,
         ease: ease,
         delay: delay,
+        scale: 1,
         scrollTrigger: scrollTrigger
           ? {
               trigger: wrapperRef.current,
@@ -44,12 +48,35 @@ const ImageReveal = ({
             }
           : undefined,
       });
+
+      if (parallax) {
+        gsap.to(imageRef.current, {
+          yPercent: parallaxSpeed / 10,
+          ease: "none",
+          scrollTrigger: {
+            trigger: wrapperRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      }
     }, wrapperRef);
 
     return () => {
       ctx.revert();
     };
-  }, [animation, duration, ease, delay, scrollTrigger, triggerStart]);
+  }, [
+    animation,
+    duration,
+    ease,
+    delay,
+    scrollTrigger,
+    triggerStart,
+    scale,
+    parallax,
+    parallaxSpeed,
+  ]);
 
   return (
     <WrapperTag
@@ -58,7 +85,9 @@ const ImageReveal = ({
       style={{ visibility: "hidden" }}
       {...props}
     >
-      <div ref={imageRef}>{children}</div>
+      <div ref={imageRef} className="w-full h-full">
+        {children}
+      </div>
     </WrapperTag>
   );
 };

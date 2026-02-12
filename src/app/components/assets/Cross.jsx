@@ -39,7 +39,7 @@ const Cross = ({
         strokeWidth={strokeWidth}
         strokeLinecap="round"
         style={{
-          transition: "transform 300ms cubic-bezier(0.4, 0, 0.2, 1)",
+          transition: "transform 500ms cubic-bezier(0.4, 0, 0.2, 1)",
           transformOrigin: "center",
           transform: isOpen ? "scaleY(0)" : "scaleY(1)",
         }}
