@@ -64,7 +64,6 @@ const TextAnimation = ({
               trigger: textRef.current,
               start: triggerStart,
               toggleActions: "play none none none",
-              markers: true,
             }
           : undefined,
       });
