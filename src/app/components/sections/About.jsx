@@ -3,7 +3,7 @@ import CTAButton from "../ui/CTAButton";
 import Image from "next/image";
 import { about_constant } from "@/constant";
 import TextAnimation from "../ui/TextAnimation";
-import ImageReveal from "../ui/ImageAnimation";
+import ImageReveal from "../ui/ImageReveal";
 
 const About = () => {
   return (

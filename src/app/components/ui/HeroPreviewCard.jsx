@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import Arrow from "../assets/Arrow";
 import Image from "next/image";
-import ImageReveal from "./ImageAnimation";
+import ImageReveal from "./ImageReveal";
 
 const HeroPreviewCard = () => {
   return (

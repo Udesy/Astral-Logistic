@@ -265,3 +265,36 @@ export const contactData = {
     ],
   },
 };
+
+export const company_process = [
+  {
+    id: 1,
+    heading: "Understanding Your Requirements",
+    text: "Each shipment begins with listening what’s being moved, when it’s needed, and what matters most—so planning starts with clarity.",
+    side: "right",
+  },
+  {
+    id: 2,
+    heading: "Strategic Route & Mode Planning",
+    text: "Routes and transport modes are selected across air, sea, road, or express, balancing speed, cost, and reliability based on real priorities.",
+    side: "left",
+  },
+  {
+    id: 3,
+    heading: "CARGO PREPARATION & SECURE PACKAGING",
+    text: "Goods are checked, packed securely, and labeled carefully to withstand handling and transit conditions.",
+    side: "right",
+  },
+  {
+    id: 4,
+    heading: "Safe Handling & Real-Time Coordination",
+    text: "Shipments are handled responsibly and coordinated in real time to reduce risk, prevent delays, and maintain consistency.",
+    side: "left",
+  },
+  {
+    id: 5,
+    heading: "Transparent Tracking & Delivery",
+    text: "Clear updates are provided throughout the journey, ensuring visibility until the shipment reaches its destination safely.",
+    side: "right",
+  },
+];

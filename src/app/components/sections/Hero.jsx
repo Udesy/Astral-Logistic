@@ -3,7 +3,7 @@ import React from "react";
 import CTAButton from "../ui/CTAButton";
 import HeroPreviewCard from "../ui/HeroPreviewCard";
 import TextAnimation from "../ui/TextAnimation";
-import ImageReveal from "../ui/ImageAnimation";
+import ImageReveal from "../ui/ImageReveal";
 
 const Hero = () => {
   return (
