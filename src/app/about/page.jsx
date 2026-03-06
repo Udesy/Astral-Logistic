@@ -10,9 +10,9 @@ const page = () => {
   return (
     <section className="">
       <div className="section-padding-x section-padding-y flex flex-col gap-2xl">
-        <div className="flex flex-col gap-3xl">
+        <div className="flex flex-col gap-3xl py-lg">
           <div className="flex flex-col gap-sm">
-            <span className="text-navy-blue text-base-large">[ About us ]</span>
+            <span className="text-navy-blue text-base-large">[ About Us ]</span>
             <TextAnimation
               as="h2"
               className="text-heading-1 max-w-[20ch]"
@@ -34,23 +34,6 @@ const page = () => {
             <h2 className="uppercase text-navy-blue text-heading-3 font-bold">
               How it Started
             </h2>
-            {/* <div className="flex flex-col gap-md">
-            <p className="text-heading-6 max-w-[40ch]">
-              {" "}
-              Astral Logistics began with a simple belief of moving goods should
-              be reliable, honest, and handled with care. We started as a small
-              team that valued discipline, clear communication, and doing the
-              job right.
-            </p>
-            <p className="text-heading-6 max-w-[40ch]">
-              For us, logistics isn’t just transport it’s the quiet work that
-              keeps businesses running. We plan with intention, pay attention to
-              every detail, and handle every shipment with the consistency that
-              earns trust. Our story is built on effort, integrity, and the
-              promise that when we take something on, we deliver it the right
-              way.
-            </p>
-          </div> */}
             <p className="text-heading-6 max-w-[40ch]">
               Astral Logistics began with a simple belief of moving goods should
               be reliable, honest, and handled with care. We started as a small

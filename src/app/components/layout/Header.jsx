@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CTAButton from "../ui/CTAButton";
 import Logo from "../assets/Logo";
 import { nav_links } from "@/constant";
@@ -12,19 +12,29 @@ const Header = ({ showMenu, setShowMenu }) => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolledPastHero, setIsScrolledPastHero] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  const lastScrollY = useRef(0);
   const isHomePage = pathname === "/";
 
   const linkClass = (path) =>
     clsx(pathname === path ? "cursor-none opacity-75" : "cursor-pointer");
 
   useEffect(() => {
-    if (!isHomePage) return;
-
     const handleScroll = () => {
       const heroHeight = window.innerHeight;
       const scrollPosition = window.scrollY;
 
-      setIsScrolledPastHero(scrollPosition > heroHeight - 60);
+      if (isHomePage) {
+        setIsScrolledPastHero(scrollPosition > heroHeight - 60);
+      }
+
+      if (scrollPosition > lastScrollY.current && scrollPosition > 80) {
+        setIsHidden(true);
+      } else {
+        setIsHidden(false);
+      }
+
+      lastScrollY.current = scrollPosition;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -47,11 +57,15 @@ const Header = ({ showMenu, setShowMenu }) => {
   };
 
   return (
-    <header className="fixed z-100 w-full h-fit header-padding">
+    <header
+      className={clsx(
+        "fixed z-100 w-full h-fit header-padding transition-transform duration-500 ease-in-out",
+        isHidden && !showMenu ? "-translate-y-full" : "translate-y-0",
+      )}
+    >
       <div
         className={clsx(
           " transition-all duration-500 flex w-full text-base grid-cols-12 items-center justify-between gap-x-fluid sm:items-start lg:grid",
-          // isScrolledPastHero && !isOpen ?"text-navy-blue" : "text-white",
           getHeaderTextColor(),
         )}
       >

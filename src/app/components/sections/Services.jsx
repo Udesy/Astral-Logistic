@@ -25,10 +25,6 @@ const Services = () => {
     <section className="section-padding-x section-padding-y">
       <div className="w-full h-full flex flex-col gap-3xl">
         <div className="lg:grid flex flex-col grid-cols-12 gap-fluid">
-          {/* <h2 className="text-heading-1 col-span-10 order-2 lg:order-1">
-            Our network covers air, sea, road, and express services to keep
-            shipments moving without delays.
-          </h2> */}
           <TextAnimation
             as="h2"
             className="text-heading-1 col-span-10 order-2 lg:order-1"
@@ -41,7 +37,7 @@ const Services = () => {
           </span>
         </div>
         <div className="w-full lg:flex lg:flex-row md:grid md:grid-cols-2 flex flex-col lg:gap-3 gap-sm">
-          {company_service.map(({ id, src, text }, index) => {
+          {company_service.map(({ id, src, text, alt }, index) => {
             const isHovered = hoveredIndex === index;
             const isOtherHovered =
               hoveredIndex !== null && hoveredIndex !== index;
@@ -60,12 +56,7 @@ const Services = () => {
                       : "1 1 0%",
                 }}
               >
-                <Image
-                  src={src}
-                  alt="Images of Services get offered by Our Company"
-                  fill
-                  className="object-cover"
-                />
+                <Image src={src} alt={alt} fill className="object-cover" />
                 <div className="absolute inset-0 p-xs text-white flex flex-col justify-between z-20">
                   <span className="text-base-large">(0{id})</span>
                   <p

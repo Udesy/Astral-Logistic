@@ -80,21 +80,25 @@ export const company_service = [
     id: 1,
     src: "/resources/images/service/service1.jpg",
     text: "Fast & Secure Express Courier Delivery",
+    alt: "Red freight truck transporting goods on a highway representing road logistics services",
   },
   {
     id: 2,
     src: "/resources/images/service/service2.jpg",
     text: "Global Air Freight & Priority Cargo Transport",
+    alt: "Cargo airplane flying in the sky representing fast air freight transportation",
   },
   {
     id: 3,
     src: "/resources/images/service/service3.jpeg",
     text: "Cost-Efficient Sea Freight for Large Shipments",
+    alt: "Container cargo ship at a shipping port representing international sea freight logistics",
   },
   {
     id: 4,
     src: "/resources/images/service/service4.png",
     text: "Trusted Road Logistics for Any Distance",
+    alt: "Courier delivering a package to a customer representing reliable parcel delivery service",
   },
 ];
 
@@ -216,7 +220,7 @@ export const footer_nav = [
   },
   {
     id: 2,
-    text: "About us",
+    text: "About Us",
     target: "/about",
   },
   {
@@ -296,5 +300,36 @@ export const company_process = [
     heading: "Transparent Tracking & Delivery",
     text: "Clear updates are provided throughout the journey, ensuring visibility until the shipment reaches its destination safely.",
     side: "right",
+  },
+];
+
+export const service_page_content = [
+  {
+    id: 0,
+    src: "/resources/images/service/service4.png",
+    heading: "ROAD FREIGHT TRANSPORTATION SERVICES",
+    text: "Our road transportation services ensure safe and efficient delivery across cities and regions. With organized route planning and careful cargo handling, we make sure shipments arrive on time and in excellent condition.",
+    alt: "Red freight truck transporting goods on a highway representing road logistics services",
+  },
+  {
+    id: 1,
+    src: "/resources/images/service/service2.jpg",
+    heading: "AIR CARGO DELIVERY SOLUTIONS",
+    text: "Our air cargo service is designed for urgent and high-priority shipments. With secure handling and efficient coordination, we ensure goods move quickly and reach their destination safely.",
+    alt: "Cargo airplane flying in the sky representing fast air freight transportation",
+  },
+  {
+    id: 2,
+    src: "/resources/images/service/service3.jpeg",
+    heading: "INTERNATIONAL SEA FREIGHT SHIPPING",
+    text: "Our sea freight solutions support large and international shipments with reliable port coordination and secure container handling for smooth global transportation.",
+    alt: "Container cargo ship at a shipping port representing international sea freight logistics",
+  },
+  {
+    id: 3,
+    src: "/resources/images/service/service1.jpg",
+    heading: "PACKAGE AND COURIER DELIVERY SERVICE",
+    text: "Our courier service provides dependable delivery for parcels and documents, ensuring careful handling and timely arrival at the final destination.",
+    alt: "Courier delivering a package to a customer representing reliable parcel delivery service",
   },
 ];

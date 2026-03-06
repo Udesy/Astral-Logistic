@@ -10,7 +10,7 @@ const About = () => {
     <section className="section-padding-x section-padding-y flex flex-col gap-3xl">
       <div className="flex flex-col gap-3xl">
         <div className="flex flex-col gap-sm">
-          <span className="text-navy-blue text-base-large">[ About us ]</span>
+          <span className="text-navy-blue text-base-large">[ About Us ]</span>
           <TextAnimation as="h2" className="text-heading-1">
             We help businesses move goods across borders by planning each
             shipment so it arrives when expected, safely.
@@ -41,14 +41,6 @@ const About = () => {
             </div>
           ))}
         </div>
-        {/* <ImageReveal className="relative w-full rounded-lg overflow-clip min-h-120 order-1 md:order-2">
-          <Image
-            src={"/resources/images/aboutsection.jpg"}
-            alt="ship dock image"
-            fill
-            className="object-cover"
-          />
-        </ImageReveal> */}
         <ImageReveal
           className="relative w-full rounded-lg overflow-clip h-120 sm:h-120 md:h-auto md:min-h-120 order-1 md:order-2"
           parallax={true}

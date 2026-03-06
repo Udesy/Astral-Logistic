@@ -70,8 +70,7 @@ const DeliveryProcessTimeline = () => {
             ease: "power2.out",
             scrollTrigger: {
               trigger: card,
-              start: "top 70%",
-              end: "top 50%",
+              start: "top 65%",
             },
           },
         );

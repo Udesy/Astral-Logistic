@@ -67,7 +67,7 @@
   }
 
   .lenis.lenis-stopped {
-    overflow: hidden;
+    overflow: clip;
   }
 
   .lenis.lenis-smooth iframe {
@@ -75,13 +75,13 @@
   }
 
   html {
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   body {
     background: var(--color-pale-blue);
     color: var(--color-black);
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   p {
@@ -208,10 +208,6 @@
 
   .animate-marquee {
     animation: marquee 30s linear infinite;
-  }
-
-  .animate-marquee:hover {
-    animation-play-state: paused;
   }
 
   .scroll-smooth {
