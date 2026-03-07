@@ -88,7 +88,7 @@ const Footer = () => {
             {social_links.map(({ id, name }) => (
               <div
                 key={id}
-                className="flex flex-row items-center justify-between px-sm max-md:py-sm h-full cursor-pointer text-navy-blue md:border-l border-b border-stroke-navy-blue last:border-b-0 last:max-md:border-b group"
+                className="flex flex-row items-center justify-between md:px-sm max-md:px-lg max-md:py-sm h-full cursor-pointer text-navy-blue md:border-l border-b border-stroke-navy-blue last:border-b-0 last:max-md:border-b group"
               >
                 {/* <h6 className="uppercase overflow-clip">{name}</h6> */}
                 <HoverLink
