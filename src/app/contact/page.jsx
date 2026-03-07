@@ -196,7 +196,7 @@ const Page = () => {
                         )}
                       </div>
                     </div>
-                    <span className="text-navy-blue/90 text-base leading-snug">
+                    <span className="text-navy-blue/90 text-base leading-[115%]">
                       By signing up, you agree to our{" "}
                       <a
                         href="/contact"
