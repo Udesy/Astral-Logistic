@@ -105,7 +105,9 @@ const Footer = () => {
       </div>
       <div className="flex md:flex-row flex-col max-md:gap-3xs justify-between py-3xs uppercase text-base-small text-navy-blue">
         <div className="flex md:flex-row flex-col md:gap-x-xl max-md:gap-y-3xs">
-          <h6>© 2025 Astral Logistics. All rights reserved.</h6>
+          <h6>
+            © {new Date().getFullYear()} Astral Logistics. All rights reserved.
+          </h6>
           <h6>Privacy Policy</h6>
         </div>
         <div>

@@ -69,7 +69,6 @@ const Page = () => {
     setErrors(newErrors);
     setTouched(newTouched);
 
-    // ✅ validate checkbox
     if (!agreed) {
       setAgreedError("You must agree before submitting");
     } else {
@@ -86,7 +85,7 @@ const Page = () => {
     <section className="flex flex-col section-padding-x section-padding-y">
       <div className="md:grid md:grid-cols-2 flex flex-col">
         <div className="flex flex-col w-full h-full gap-3xl">
-          <div className="flex flex-col gap-sm py-xl">
+          <div className="flex flex-col gap-sm pt-lg">
             <span className="text-navy-blue text-base-large">[ Contact ]</span>
             <TextAnimation as="h2" className="text-heading-1">
               Ready to Move Your Business Forward{" "}
@@ -97,9 +96,9 @@ const Page = () => {
             </TextAnimation>
           </div>
         </div>
-        <div className="w-full h-full py-xl">
+        <div className="w-full h-full pt-lg">
           {submitted ? (
-            <div className="flex flex-col gap-y-sm">
+            <div className="flex flex-col gap-y-md">
               <TextAnimation as="h2" className="text-heading-3">
                 Thanks for reaching out! Our team will contact you as soon as
                 possible.
@@ -121,44 +120,46 @@ const Page = () => {
             </div>
           ) : (
             <form
-              className="flex flex-col gap-y-md"
+              className="flex flex-col gap-y-lg"
               onSubmit={handleSubmit}
               noValidate
             >
-              <div className="h-full w-full flex flex-col gap-y-md">
-                {contact_form.map(
-                  ({ id, label, placeholder, className, name, type }) => (
-                    <div key={id} className="flex flex-col gap-y-3xs">
-                      <label className="text-navy-blue text-base">
-                        {label}
-                        <span className="text-red-600">*</span>
-                      </label>
-                      {type === "input" ? (
-                        <input
-                          name={name}
-                          placeholder={placeholder}
-                          value={values[name]}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                          className={`${className} ${errors[name] && touched[name] ? "border-red-600" : "border-navy-blue/40"}`}
-                        />
-                      ) : (
-                        <textarea
-                          name={name}
-                          placeholder={placeholder}
-                          value={values[name]}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                          className={`${className} ${errors[name] && touched[name] ? "border-red-600" : "border-navy-blue/40"}`}
-                        />
-                      )}
+              <div className="h-full w-full flex flex-col gap-y-lg">
+                <div className="h-full w-full flex flex-col gap-y-md">
+                  {contact_form.map(
+                    ({ id, label, placeholder, className, name, type }) => (
+                      <div key={id} className="flex flex-col gap-y-3xs">
+                        <label className="text-navy-blue text-base">
+                          {label}
+                          <span className="text-red-600">*</span>
+                        </label>
+                        {type === "input" ? (
+                          <input
+                            name={name}
+                            placeholder={placeholder}
+                            value={values[name]}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            className={`${className} ${errors[name] && touched[name] ? "border-red-600" : "border-navy-blue/40"} text-base`}
+                          />
+                        ) : (
+                          <textarea
+                            name={name}
+                            placeholder={placeholder}
+                            value={values[name]}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            className={`${className} ${errors[name] && touched[name] ? "border-red-600" : "border-navy-blue/40"} text-base`}
+                          />
+                        )}
 
-                      {errors[name] && touched[name] && (
-                        <span className="text-red-600">{errors[name]}</span>
-                      )}
-                    </div>
-                  ),
-                )}
+                        {errors[name] && touched[name] && (
+                          <span className="text-red-600">{errors[name]}</span>
+                        )}
+                      </div>
+                    ),
+                  )}
+                </div>
                 <div className="flex flex-col gap-y-3xs">
                   <label className="flex items-start gap-x-xs cursor-pointer group">
                     <div className="relative shrink-0">
@@ -195,7 +196,7 @@ const Page = () => {
                         )}
                       </div>
                     </div>
-                    <span className="text-navy-blue/90 text-sm leading-snug">
+                    <span className="text-navy-blue/90 text-base leading-snug">
                       By signing up, you agree to our{" "}
                       <a
                         href="/contact"

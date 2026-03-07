@@ -10,7 +10,7 @@ const page = () => {
   return (
     <section className="">
       <div className="section-padding-x section-padding-y flex flex-col gap-2xl">
-        <div className="flex flex-col gap-3xl py-lg">
+        <div className="flex flex-col gap-3xl pt-lg">
           <div className="flex flex-col gap-sm">
             <span className="text-navy-blue text-base-large">[ About Us ]</span>
             <TextAnimation

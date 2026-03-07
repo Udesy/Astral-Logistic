@@ -9,7 +9,7 @@ const page = () => {
   return (
     <section>
       <div className="section-padding-x section-padding-y flex flex-col">
-        <div className="flex flex-col gap-sm py-lg">
+        <div className="flex flex-col gap-sm pt-lg">
           <span className="text-navy-blue text-base-large">
             [ Our Services ]
           </span>
