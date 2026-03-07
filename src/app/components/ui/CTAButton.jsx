@@ -10,6 +10,7 @@ const CTAButton = ({
   variant = "primary",
   onClick,
   isOpen,
+  type = "",
 }) => {
   const baseStyle =
     "cursor-pointer py-2xs px-xs w-fit rounded-sm text-base group";
@@ -38,6 +39,50 @@ const CTAButton = ({
           </span>
         </div>
       </Link>
+    );
+  }
+  if (type === "submit") {
+    return (
+      <button
+        type={type}
+        className={`${baseStyle} ${variants[variant]} ${className}`}
+      >
+        <div className="flex text-nowrap items-center justify-center gap-xs font-medium text-black">
+          {children}
+          <span className="overflow-clip inline-flex w-fit relative ">
+            <Arrow
+              className="absolute -translate-x-6 group-hover:translate-x-0 duration-400 ease-in-out transition-all"
+              aria-hidden="true"
+            />
+            <Arrow
+              className="group-hover:translate-x-6 duration-400 ease-in-out transition-all"
+              aria-hidden="true"
+            />
+          </span>
+        </div>
+      </button>
+    );
+  }
+  if (type === "button") {
+    return (
+      <button
+        className={`${baseStyle} ${variants[variant]} ${className}`}
+        onClick={onClick}
+      >
+        <div className="flex text-nowrap items-center justify-center gap-xs font-medium text-black">
+          {children}
+          <span className="overflow-clip inline-flex w-fit relative ">
+            <Arrow
+              className="absolute -translate-x-6 group-hover:translate-x-0 duration-400 ease-in-out transition-all"
+              aria-hidden="true"
+            />
+            <Arrow
+              className="group-hover:translate-x-6 duration-400 ease-in-out transition-all"
+              aria-hidden="true"
+            />
+          </span>
+        </div>
+      </button>
     );
   }
   return (

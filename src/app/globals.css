@@ -44,6 +44,7 @@
   --column-width: calc(
     (100% - var(--grid-gap-total)) / var(--column-count) + var(--gap-fluid)
   );
+  --animate-dash-slide: dash-slide 0.8s ease-in-out 0.5s both;
 }
 
 @layer base {
@@ -208,6 +209,17 @@
 
   .animate-marquee {
     animation: marquee 30s linear infinite;
+  }
+
+  @keyframes dash-slide {
+    0% {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scaleX(1);
+    }
   }
 
   .scroll-smooth {

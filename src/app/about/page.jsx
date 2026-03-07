@@ -29,7 +29,7 @@ const page = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-col md:grid md:grid-cols-2 md:gap-xl gap-xl pt-2xl">
+        <div className="flex flex-col md:grid md:grid-cols-2 md:gap-xl gap-xl">
           <div className="w-full h-full flex flex-col gap-lg order-2 md:order-1 md:pt-2xl">
             <h2 className="uppercase text-navy-blue text-heading-3 font-bold">
               How it Started

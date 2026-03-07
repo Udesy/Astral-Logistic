@@ -131,11 +131,11 @@ const DeliveryProcessTimeline = () => {
                   } md:w-1/2 w-fit`}
                   style={{ top: index === 0 ? "0px" : "-20px" }}
                 >
-                  <div className="bg-white border border-navy-blue rounded-lg py-md px-lg">
-                    <h3 className="text-xl font-bold text-navy-blue mb-xs text-heading-5 uppercase">
+                  <div className="bg-white border border-navy-blue flex flex-col gap-y-xs rounded-lg py-md px-lg">
+                    <h3 className="text-xl font-bold text-navy-blue text-heading-5 uppercase mt-xs">
                       {process.heading}
                     </h3>
-                    <p className="text-navy-blue/60 text-base leading-5 max-w-[30ch]">
+                    <p className="text-navy-blue/60 text-base leading-[115%] max-w-[30ch] mb-xs">
                       {process.text}
                     </p>
                   </div>

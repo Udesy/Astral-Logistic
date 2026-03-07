@@ -333,3 +333,50 @@ export const service_page_content = [
     alt: "Courier delivering a package to a customer representing reliable parcel delivery service",
   },
 ];
+
+export const contact_form = [
+  {
+    id: 0,
+    label: "Full Name",
+    placeholder: "e.g. Jhon Doe",
+    type: "input",
+    name: "name",
+    className:
+      "border border-navy-blue/40 focus:outline-none rounded-sm py-xs px-xs w-full h-full",
+  },
+  {
+    id: 1,
+    label: "Email Address",
+    placeholder: "yourexample@example.com",
+    type: "input",
+    name: "email",
+    className:
+      "border border-navy-blue/40 focus:outline-none rounded-sm py-xs px-xs w-full h-full",
+  },
+  {
+    id: 2,
+    label: "Phone Number",
+    placeholder: "e.g. +91 55555 55555",
+    type: "input",
+    name: "phone",
+    className: "border focus:outline-none rounded-sm py-xs px-xs w-full h-full",
+  },
+  {
+    id: 3,
+    label: "Company Name",
+    placeholder: "Company / Business Name",
+    type: "input",
+    name: "company",
+    className:
+      "border border-navy-blue/40 focus:outline-none rounded-sm py-xs px-xs w-full h-full",
+  },
+  {
+    id: 4,
+    label: "Your Inqury Message",
+    placeholder: "Tell us how we can help.",
+    type: "textarea",
+    name: "message",
+    className:
+      "border border-navy-blue/40 focus:outline-none rounded-sm py-xs px-xs w-full h-[25vh]",
+  },
+];
