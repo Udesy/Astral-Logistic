@@ -98,7 +98,7 @@ const Page = () => {
         </div>
         <div className="w-full h-full pt-lg">
           {submitted ? (
-            <div className="flex flex-col gap-y-md">
+            <div className="flex flex-col py-lg gap-y-lg">
               <TextAnimation as="h2" className="text-heading-3">
                 Thanks for reaching out! Our team will contact you as soon as
                 possible.
