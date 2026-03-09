@@ -56,7 +56,14 @@ const Services = () => {
                       : "1 1 0%",
                 }}
               >
-                <Image src={src} alt={alt} fill className="object-cover" />
+                <Image
+                  src={src}
+                  alt={alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  quality={80}
+                  className="object-cover"
+                />
                 <div className="absolute inset-0 p-xs text-white flex flex-col justify-between z-20">
                   <span className="text-base-large">(0{id})</span>
                   <p

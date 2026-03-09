@@ -47,8 +47,10 @@ const WhyChooseUs = () => {
         >
           <Image
             src={"/resources/images/whychooseussection.png"}
-            alt="ship dock image"
+            alt="Modern logistics warehouse with organized shipping containers"
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            quality={90}
             className="object-cover scale-110"
           />
         </ImageReveal>

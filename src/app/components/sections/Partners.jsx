@@ -3,12 +3,12 @@ import React from "react";
 
 const Partners = () => {
   return (
-    <section className="section-padding-x section-padding-y">
+    <section className="section-padding-x section-padding-y" aria-label="Our partners">
       <div className="flex flex-col gap-xl">
         <div className="w-full flex items-center justify-center text-navy-blue">
-          <h5 className="text-heading-5">
+          <h2 className="text-heading-5">
             Trusted by leading companies Worldwide
-          </h5>
+          </h2>
         </div>
         <div className="flex flex-nowrap animate-marquee gap-24 w-max items-center h-2xl">
           {company_partner.map(({ id, svg }) => (

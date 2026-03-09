@@ -22,6 +22,8 @@ const Hero = () => {
             alt="Automated cargo containers moving through a modern shipping terminal."
             fill
             priority
+            sizes="100vw"
+            quality={85}
             className="object-cover"
           />
         </ImageReveal>

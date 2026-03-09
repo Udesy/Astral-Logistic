@@ -231,10 +231,10 @@ export const footer_nav = [
 ];
 
 export const social_links = [
-  { id: 0, name: "facebook" },
-  { id: 1, name: "linkedin" },
-  { id: 2, name: "instagram" },
-  { id: 3, name: "x" },
+  { id: 0, name: "facebook", url: "https://facebook.com", ariaLabel: "Visit our Facebook page" },
+  { id: 1, name: "linkedin", url: "https://linkedin.com", ariaLabel: "Visit our LinkedIn page" },
+  { id: 2, name: "instagram", url: "https://instagram.com", ariaLabel: "Visit our Instagram page" },
+  { id: 3, name: "x", url: "https://x.com", ariaLabel: "Visit our X (Twitter) page" },
 ];
 
 export const contactData = {

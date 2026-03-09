@@ -85,20 +85,23 @@ const Footer = () => {
             <Logo height={"100%"} width={"100%"} className="text-navy-blue" />
           </div>
           <div className="col-start-10 col-end-13 flex flex-col justify-between order-1 md:order-none">
-            {social_links.map(({ id, name }) => (
-              <div
+            {social_links.map(({ id, name, url, ariaLabel }) => (
+              <a
                 key={id}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={ariaLabel}
                 className="flex flex-row items-center justify-between md:px-sm max-md:px-lg max-md:py-sm h-full cursor-pointer text-navy-blue md:border-l border-b border-stroke-navy-blue last:border-b-0 last:max-md:border-b group"
               >
-                {/* <h6 className="uppercase overflow-clip">{name}</h6> */}
                 <HoverLink
                   text={name}
                   className={"uppercase overflow-clip text-base"}
                 />
-                <span className="size-4">
+                <span className="size-4" aria-hidden="true">
                   <ExternalLink />
                 </span>
-              </div>
+              </a>
             ))}
           </div>
         </div>

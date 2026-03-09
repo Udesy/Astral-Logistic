@@ -2,70 +2,95 @@
 
 import { footer_nav } from "@/constant";
 import clsx from "clsx";
-import gsap from "gsap";
-import { SplitText } from "gsap/SplitText";
 import Link from "next/link";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const MenuOverlay = ({ showMenu, setShowMenu }) => {
   const menuRef = useRef(null);
   const paraRef = useRef(null);
   const tl = useRef();
+  const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
-    const split = new SplitText(paraRef.current, {
-      type: "lines",
-    });
+    const initAnimation = async () => {
+      const [gsapModule, splitTextModule] = await Promise.all([
+        import("gsap"),
+        import("gsap/SplitText"),
+      ]);
 
-    split.lines.forEach((line) => {
-      const mask = document.createElement("div");
-      mask.style.overflow = "hidden";
-      line.parentNode.insertBefore(mask, line);
-      mask.appendChild(line);
-    });
-    const ctx = gsap.context(() => {
-      tl.current = gsap
-        .timeline({ paused: true })
-        .set(menuRef.current, { visibility: "visible" })
-        .to(menuRef.current, {
-          duration: 0.5,
-          opacity: 1,
-          pointerEvents: "all",
-          ease: "power3.inOut",
-        })
+      const gsap = gsapModule.default;
+      const { SplitText } = splitTextModule;
 
-        .from(split.lines, {
-          yPercent: 100,
-          stagger: 0.1,
-          duration: 0.2,
-          ease: "expo.out",
-        })
-        .from(
-          ".menu-line",
-          {
-            scaleX: 0,
+      const split = new SplitText(paraRef.current, {
+        type: "lines",
+      });
+
+      split.lines.forEach((line) => {
+        const mask = document.createElement("div");
+        mask.style.overflow = "hidden";
+        line.parentNode.insertBefore(mask, line);
+        mask.appendChild(line);
+      });
+
+      const ctx = gsap.context(() => {
+        tl.current = gsap
+          .timeline({ paused: true })
+          .set(menuRef.current, { visibility: "visible" })
+          .to(menuRef.current, {
+            duration: 0.5,
+            opacity: 1,
+            pointerEvents: "all",
+            ease: "power3.inOut",
+          })
+          .from(split.lines, {
+            yPercent: 100,
             stagger: 0.1,
             duration: 0.2,
-            ease: "power3.inOut",
-          },
-          "-=0.3",
-        )
-        .from(
-          ".menu-item",
-          {
-            y: 5,
-            opacity: 0,
-            stagger: 0.1,
-            duration: 0.1,
-            ease: "power1.inOut",
-          },
-          "-=0.5",
-        );
-    });
-    return () => ctx.revert();
+            ease: "expo.out",
+          })
+          .from(
+            ".menu-line",
+            {
+              scaleX: 0,
+              stagger: 0.1,
+              duration: 0.2,
+              ease: "power3.inOut",
+            },
+            "-=0.3",
+          )
+          .from(
+            ".menu-item",
+            {
+              y: 5,
+              opacity: 0,
+              stagger: 0.1,
+              duration: 0.1,
+              ease: "power1.inOut",
+            },
+            "-=0.5",
+          );
+      });
+
+      setIsInitialized(true);
+
+      return () => ctx.revert();
+    };
+
+    // Defer initialization until user interaction is likely
+    if ("requestIdleCallback" in window) {
+      const idleId = requestIdleCallback(() => initAnimation(), {
+        timeout: 500,
+      });
+      return () => cancelIdleCallback(idleId);
+    } else {
+      const timeoutId = setTimeout(initAnimation, 200);
+      return () => clearTimeout(timeoutId);
+    }
   }, []);
 
   useEffect(() => {
+    if (!isInitialized || !tl.current) return;
+
     if (showMenu) {
       tl.current.play();
       if (window.lenis) window.lenis.stop();
@@ -77,7 +102,7 @@ const MenuOverlay = ({ showMenu, setShowMenu }) => {
         document.body.style.overflow = "";
       }, 500);
     }
-  }, [showMenu]);
+  }, [showMenu, isInitialized]);
 
   return (
     <div

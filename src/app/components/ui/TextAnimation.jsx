@@ -1,13 +1,6 @@
 "use client";
 
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SplitText } from "gsap/SplitText";
-import React, { useEffect, useRef } from "react";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
+import React, { useEffect, useRef, useState } from "react";
 
 const TextAnimation = ({
   children,
@@ -19,63 +12,96 @@ const TextAnimation = ({
   as: Component = "h1",
   scrollTrigger = true,
   triggerStart = "top 80%",
+  delay = 0,
   ...props
 }) => {
   const textRef = useRef(null);
   const splitRef = useRef(null);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    if (!textRef.current) return;
+    // Defer GSAP loading until after first paint
+    const initAnimation = async () => {
+      if (!textRef.current) return;
 
-    const ctx = gsap.context(() => {
-      gsap.set(textRef.current, { autoAlpha: 1 });
-      splitRef.current = new SplitText(textRef.current, {
-        type: type,
-      });
+      const [gsapModule, scrollTriggerModule, splitTextModule] =
+        await Promise.all([
+          import("gsap"),
+          import("gsap/ScrollTrigger"),
+          import("gsap/SplitText"),
+        ]);
 
-      const elements =
-        type === "words"
-          ? splitRef.current.words
-          : type === "lines"
-            ? splitRef.current.lines
-            : splitRef.current.chars;
+      const gsap = gsapModule.default;
+      const { ScrollTrigger } = scrollTriggerModule;
+      const { SplitText } = splitTextModule;
 
-      if (type === "lines") {
-        elements.forEach((line) => {
-          const mask = document.createElement("div");
-          mask.style.overflow = "hidden";
-          line.parentNode.insertBefore(mask, line);
-          mask.appendChild(line);
+      gsap.registerPlugin(ScrollTrigger, SplitText);
+
+      const ctx = gsap.context(() => {
+        gsap.set(textRef.current, { autoAlpha: 1 });
+        splitRef.current = new SplitText(textRef.current, {
+          type: type,
         });
-      }
 
-      gsap.set(elements, { opacity: 0, yPercent: 30 });
+        const elements =
+          type === "words"
+            ? splitRef.current.words
+            : type === "lines"
+              ? splitRef.current.lines
+              : splitRef.current.chars;
 
-      gsap.to(elements, {
-        opacity: 1,
-        yPercent: 0,
-        scale: 1,
-        filter: "blur(0px)",
-        stagger: stagger,
-        duration: durartion,
-        ease: ease,
-        scrollTrigger: scrollTrigger
-          ? {
-              trigger: textRef.current,
-              start: triggerStart,
-              toggleActions: "play none none none",
-            }
-          : undefined,
-      });
-    }, textRef);
+        if (type === "lines") {
+          elements.forEach((line) => {
+            const mask = document.createElement("div");
+            mask.style.overflow = "hidden";
+            line.parentNode.insertBefore(mask, line);
+            mask.appendChild(line);
+          });
+        }
 
-    return () => {
-      if (splitRef.current) {
-        splitRef.current.revert();
-      }
-      ctx.revert();
+        gsap.set(elements, { opacity: 0, yPercent: 30 });
+
+        gsap.to(elements, {
+          opacity: 1,
+          yPercent: 0,
+          scale: 1,
+          filter: "blur(0px)",
+          stagger: stagger,
+          duration: durartion,
+          delay: delay,
+          ease: ease,
+          scrollTrigger: scrollTrigger
+            ? {
+                trigger: textRef.current,
+                start: triggerStart,
+                toggleActions: "play none none none",
+              }
+            : undefined,
+        });
+      }, textRef);
+
+      setIsReady(true);
+
+      return () => {
+        if (splitRef.current) {
+          splitRef.current.revert();
+        }
+        ctx.revert();
+      };
     };
-  }, [type, stagger, durartion, ease, scrollTrigger, triggerStart]);
+
+    // Use requestIdleCallback if available, otherwise setTimeout
+    if ("requestIdleCallback" in window) {
+      const idleId = requestIdleCallback(() => initAnimation(), {
+        timeout: 200,
+      });
+      return () => cancelIdleCallback(idleId);
+    } else {
+      const timeoutId = setTimeout(initAnimation, 50);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [type, stagger, durartion, ease, scrollTrigger, triggerStart, delay]);
+
   return (
     <Component
       ref={textRef}

@@ -13,13 +13,21 @@ const Header = ({ showMenu, setShowMenu }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolledPastHero, setIsScrolledPastHero] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
   const lastScrollY = useRef(0);
   const isHomePage = pathname === "/";
 
   const linkClass = (path) =>
     clsx(pathname === path ? "cursor-none opacity-75" : "cursor-pointer");
 
+  // Mark component as mounted to prevent hydration mismatch
   useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!hasMounted) return;
+
     const handleScroll = () => {
       const heroHeight = window.innerHeight;
       const scrollPosition = window.scrollY;
@@ -41,7 +49,7 @@ const Header = ({ showMenu, setShowMenu }) => {
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isHomePage]);
+  }, [isHomePage, hasMounted]);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -56,11 +64,22 @@ const Header = ({ showMenu, setShowMenu }) => {
     return "text-navy-blue";
   };
 
+  // Background follows the same logic as text color:
+  // pale-blue bg when text is navy-blue, transparent when text is white
+  const getBackgroundColor = () => {
+    if (showMenu) return "bg-transparent";
+    if (pathname === "/") {
+      return isScrolledPastHero ? "bg-pale-blue" : "bg-transparent";
+    }
+    return "bg-pale-blue";
+  };
+
   return (
     <header
       className={clsx(
-        "fixed z-100 w-full h-fit header-padding transition-transform duration-500 ease-in-out",
+        "fixed z-100 w-full h-fit header-padding transition-all duration-500 ease-in-out",
         isHidden && !showMenu ? "-translate-y-full" : "translate-y-0",
+        getBackgroundColor(),
       )}
     >
       <div

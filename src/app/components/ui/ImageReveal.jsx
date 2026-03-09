@@ -1,12 +1,6 @@
 "use client";
 
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect, useRef } from "react";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 const ImageReveal = ({
   children,
@@ -29,43 +23,69 @@ const ImageReveal = ({
   useEffect(() => {
     if (!wrapperRef.current || !imageRef.current) return;
 
-    const ctx = gsap.context(() => {
-      gsap.set(wrapperRef.current, { autoAlpha: 1 });
+    let ctx;
 
-      gsap.set(imageRef.current, { opacity: 0, scale: scale ? 1.1 : 1 });
+    const initAnimation = async () => {
+      const [gsapModule, scrollTriggerModule] = await Promise.all([
+        import("gsap"),
+        import("gsap/ScrollTrigger"),
+      ]);
 
-      gsap.to(imageRef.current, {
-        opacity: 1,
-        duration: duration,
-        ease: ease,
-        delay: delay,
-        scale: 1,
-        scrollTrigger: scrollTrigger
-          ? {
-              trigger: wrapperRef.current,
-              start: triggerStart,
-              toggleActions: "play none none none",
-            }
-          : undefined,
-      });
+      const gsap = gsapModule.default;
+      const { ScrollTrigger } = scrollTriggerModule;
 
-      if (parallax) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      ctx = gsap.context(() => {
+        gsap.set(wrapperRef.current, { autoAlpha: 1 });
+        gsap.set(imageRef.current, { opacity: 0, scale: scale ? 1.1 : 1 });
+
         gsap.to(imageRef.current, {
-          yPercent: parallaxSpeed / 10,
-          ease: "none",
-          scrollTrigger: {
-            trigger: wrapperRef.current,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true,
-          },
+          opacity: 1,
+          duration: duration,
+          ease: ease,
+          delay: delay,
+          scale: 1,
+          scrollTrigger: scrollTrigger
+            ? {
+                trigger: wrapperRef.current,
+                start: triggerStart,
+                toggleActions: "play none none none",
+              }
+            : undefined,
         });
-      }
-    }, wrapperRef);
 
-    return () => {
-      ctx.revert();
+        if (parallax) {
+          gsap.to(imageRef.current, {
+            yPercent: parallaxSpeed / 10,
+            ease: "none",
+            scrollTrigger: {
+              trigger: wrapperRef.current,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+            },
+          });
+        }
+      }, wrapperRef);
     };
+
+    // Use requestIdleCallback if available, otherwise setTimeout
+    if ("requestIdleCallback" in window) {
+      const idleId = requestIdleCallback(() => initAnimation(), {
+        timeout: 150,
+      });
+      return () => {
+        cancelIdleCallback(idleId);
+        if (ctx) ctx.revert();
+      };
+    } else {
+      const timeoutId = setTimeout(initAnimation, 50);
+      return () => {
+        clearTimeout(timeoutId);
+        if (ctx) ctx.revert();
+      };
+    }
   }, [
     animation,
     duration,

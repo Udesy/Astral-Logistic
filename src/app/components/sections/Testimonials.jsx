@@ -141,10 +141,10 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="section-padding-x section-padding-y">
+    <section className="section-padding-x section-padding-y" aria-label="Client testimonials">
       <div className="flex flex-col gap-xl">
         <div className="w-full flex items-center justify-center text-navy-blue">
-          <h5 className="text-heading-5">Hear From Our Clients</h5>
+          <h2 className="text-heading-5">Hear From Our Clients</h2>
         </div>
 
         <div

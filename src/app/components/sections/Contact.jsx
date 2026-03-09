@@ -10,6 +10,8 @@ const Contact = () => {
         <div className="absolute inset-0">
           <Image
             fill
+            sizes="100vw"
+            quality={80}
             className="object-cover"
             alt="Aerial view of a busy container terminal with automated trucks transporting shipping containers between stacked cargo lanes."
             src={"/resources/images/contactsection.jpg"}

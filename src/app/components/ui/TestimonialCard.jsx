@@ -8,36 +8,29 @@ const TestimonialCard = ({
   client_position,
 }) => {
   return (
-    <div className="flex flex-row items-center sm:min-w-[500px] border border-stroke-navy-blue bg-white max-sm:p-sm p-md rounded-lg gap-lg w-full h-fit">
+    <article className="flex flex-row items-center sm:min-w-[500px] border border-stroke-navy-blue bg-white max-sm:p-sm p-md rounded-lg gap-lg w-full h-fit">
       <div className="flex flex-col justify-between sm:gap-xl gap-lg">
-        <p className="italic text-base leading-[110%] max-w-[35ch]">
+        <blockquote className="italic text-base leading-[110%] max-w-[35ch]">
           {client_review}
-        </p>
+        </blockquote>
         <div>
-          <h5 className="text-navy-blue">{client_name}</h5>
-          <h6 className="text-gray text-base-small leading-[110%] max-w-[18ch]">
+          <p className="text-navy-blue font-medium">{client_name}</p>
+          <p className="text-gray text-base-small leading-[110%] max-w-[18ch]">
             {client_position}
-          </h6>
+          </p>
         </div>
       </div>
       <div className="relative aspect-3/4 w-45 h-full rounded-md overflow-clip">
         <Image
           src={src}
-          alt="Client Profile Images"
+          alt={`Profile photo of ${client_name}`}
           fill
-          sizes="1"
+          sizes="180px"
+          quality={75}
           className="object-cover"
         />
       </div>
-      {/* <div className="relative sm:w-[250px] w-[100px] h-full rounded-md overflow-clip">
-        <Image
-          src={src}
-          alt="Client Profile Images"
-          fill
-          className="object-cover"
-        />
-      </div> */}
-    </div>
+    </article>
   );
 };
 

@@ -47,8 +47,10 @@ const About = () => {
         >
           <Image
             src={"/resources/images/aboutsection.jpg"}
-            alt="ship dock image"
+            alt="Cargo ship docked at a busy port terminal"
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            quality={80}
             className="object-cover scale-110"
           />
         </ImageReveal>

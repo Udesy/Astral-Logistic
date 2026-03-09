@@ -11,9 +11,9 @@ const HeroPreviewCard = () => {
       className="w-full h-full flex flex-row bg-white/20 backdrop-blur-sm p-2xs gap-3xs group"
     >
       <div className="text-white flex flex-col justify-between items-start w-full h-full text-base">
-        <h5>Solutions for Every Transport Requirement</h5>
+        <p className="font-medium">Solutions for Every Transport Requirement</p>
         <span className="inline-flex justify-center items-center gap-1.5">
-          <h5 className="text-base-small">Learn More</h5>
+          <span className="text-base-small">Learn More</span>
           <span className="relative inline-flex w-fit overflow-clip">
             <Arrow
               size={16}
@@ -31,8 +31,10 @@ const HeroPreviewCard = () => {
           <ImageReveal scrollTrigger={false}>
             <Image
               src={"/resources/images/heropreview1.jpeg"}
-              alt="Transport preview 1"
+              alt="Freight truck on highway showcasing road transport"
               fill
+              sizes="128px"
+              quality={75}
               className="object-cover"
             />
           </ImageReveal>
@@ -41,8 +43,10 @@ const HeroPreviewCard = () => {
           <ImageReveal scrollTrigger={false}>
             <Image
               src={"/resources/images/heropreview2.jpeg"}
-              alt="Transport preview 2"
+              alt="Cargo container ship representing sea freight"
               fill
+              sizes="64px"
+              quality={75}
               className="object-cover"
             />
           </ImageReveal>
